@@ -1,38 +1,228 @@
 .App {
-  text-align: center;
+  background-color: rgba(178,173,167, 0.5);
+  padding: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  display: flex;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container-info {
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.haupt-cont {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  /* border: 1px solid; */
+  padding: 1px 10px;
+}
+
+.cont {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.chef {
+  display: flex;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.box {
+  background: rgba(61,45,44, 0.5);
+  flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px auto;/* mit diesem code sorgen wir dafür, dass die box automatisch in der mitte ist */
+  width: 35%;
+  -webkit-box-shadow: 0px 0px 6px 5px rgba(61,45,44,0.83); 
+  box-shadow: 0px 0px 6px 5px rgba(61,45,44,0.83);
+}
+
+.search {
+  width: 500px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  background-color: transparent;
+  color: black;
+  outline: none;
   }
-  to {
-    transform: rotate(360deg);
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: -20px auto 30px;
+  /* margin-top: 10px; */
+  /* margin: 10px 0px 30px 125px; */
+  padding: 10px;
+  width: 60%;
+  background: #b2ada7;
+  list-style-type: none;/* mit diesem befehl entfernen wir die unnötigen punkte bei "li" */
+}
+
+.pic {
+  -webkit-box-shadow: 4px 4px 10px 4px #3D2D2C; 
+  box-shadow: 4px 4px 10px 4px #3D2D2C;
+  transform: perspective(1500px) rotateY(15deg);
+  border-radius: 1rem;
+  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px; */
+  transition: transform 0.8s ease 0s;
+
+  &:hover {
+    transform: perspective(3000px) rotateY(5deg);
+  }
+}
+
+button {
+  margin-left: -61px;
+  background-color: #70979f;
+  cursor: pointer;
+	padding: 6px 18px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+button:hover {
+  background: #5f8892;
+}
+
+h1, h2, h3, ul, li, p, span {
+  font-family: 'Single Day', cursive;
+}
+
+h1 {
+  letter-spacing: 0.1rem;
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 35px;
+  margin-top: 50px;
+}
+
+li {
+  padding: 10px;
+  margin: 5px;
+}
+
+p {
+  font-size: 28px;
+}
+
+span {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.horizOne {
+  background-color: black;
+  width: 80%;
+  height:3px;
+  border: none;
+}
+
+.horizTwo {
+  background-color: black;
+  width: 60%;
+  height:3px;
+  border: none;
+}
+
+.vert {
+  border: 1px solid;
+  margin: 7px 0px;
+}
+
+a {
+  font-family: 'Single Day', cursive;
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+  margin: 20px;
+  animation: textshadow 8s infinite alternate;
+}
+
+@keyframes textshadow {
+	0%   { text-shadow: 1px 1px 0px #3D2D2C }
+	10%   { text-shadow: 3px 3px 2px #3D2D2C }
+	20%  { text-shadow: 9px 10px 6px #3D2D2C }
+	40%  { text-shadow: 10px 15px 6px #3D2D2C }
+	60%  { text-shadow: 0px 10px 4px #3D2D2C }
+	80%  { text-shadow: -10px 8px 3px #3D2D2C }
+	100%  { text-shadow: 1px 5px 1px #3D2D2C }
+}
+
+video {
+  object-fit: cover;/* abgebildet auf dem komplettem interface */
+  width: 100vw;
+  height: 100vh;
+  position: fixed;/* bild oder video werden auf dem interface fixiert */
+  top: 0;
+  left: 0;
+  z-index: -1;/* bild oder video werden in den hintergrung des interfaces gebracht so das der rest zu sehen ist z.B. text usw. */
+}
+
+
+/* smartpohone */
+@media all and (max-width: 1200px) {
+  .box {
+    width: 60%;
+  }
+}
+
+@media all and (max-width: 950px) {
+  .box {
+    width: 50%;
+  }
+  .pic {
+    width: 200px;
+  }
+
+  h2, h3 {
+    font-size: 25px;
+  }
+}
+
+@media all and (max-width: 700px) {
+  .search {
+    width: 80%;
+  }
+
+  .box {
+    width: 70%;
+  }
+
+  .pic {
+    width: 190px;
+  }
+
+  h2, h3 {
+    font-size: 25px;
+  }
+
+  a {
+    font-size: 15px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .box {
+    width: 70%;
+  }
+
+  h1 {
+    font-size: 40px;
   }
 }
