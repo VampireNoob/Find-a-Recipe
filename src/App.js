@@ -91,5 +91,3 @@ es verändertem zustand durch eine methode(funktion) in dem fall "myRecipeSearch
 }
 
 export default App;
-
-// https://api.edamam.com/api/recipes/v2?type=public&q=avocado&app_id=6109b51a&app_key=REMOVED_KEY
