@@ -9,8 +9,8 @@ import './App.css';
 function App() {
 
 // die zwei sachen finden wir bei unserer API adresse unter den jeweiligen namen "id" und "key"
-  const MY_ID = "6109b51a";
-  const MY_KEY = "REMOVED_KEY";
+  const MY_ID = process.env.REACT_APP_EDAMAM_ID;
+  const MY_KEY = process.env.REACT_APP_EDAMAM_KEY;
 
   const [mySearch, setMySearch] = useState(''); // das ist für das eingabefeld um zu sehen was der user eingibt und immer mit "" in den () damit das feld leer ist zum start 
   const [myRecipe, setMyRecipe] = useState([]); // das ist für das objekt bzw. für die abbildung der rezepte und da setzen wir immer leere [] ind die ()
