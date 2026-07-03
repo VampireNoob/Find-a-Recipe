@@ -21,12 +21,10 @@ function App() {
     const getRecipe = async () => {
       const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${wordSubmitted}&app_id=${MY_ID}&app_key=${MY_KEY}`);
       const data = await response.json();
-      setMyRecipe(data.hits); //veränderter zustand der rezepte was abgebildet wird nach der eingabe
-      // console.log(data.hits) dadurch krigen wir zugang bei "console" für die sachen die wir brauchen
-      console.log(data.hits)
+      setMyRecipe(data.hits);
     }
-  getRecipe() // hier rufen wir die asynchrone abfrage auf
-  }, [wordSubmitted] ) // damit rufen wir seite bei null auf, nur in verbindung mit API bei "q"
+  getRecipe()
+  }, [wordSubmitted, MY_ID, MY_KEY] )
 
 // konstante um zugriff zum eingabefeld zu kriegen
   const myRecipeSearch = (e) => {
